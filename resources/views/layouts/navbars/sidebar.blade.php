@@ -101,10 +101,7 @@
                                     {{ __('User Management') }}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('tech.index') }}">
-                                    {{ __('Technician Management') }}
-                                </a>
+                           
                             </li>
                         </ul>
                     </div>

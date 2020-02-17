@@ -33,7 +33,8 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">{{ __('Name') }}</th>
+                                    <th scope="col">{{ __('First Name') }}</th>
+                                    <th scope="col">{{ __('Last Name') }}</th>
                                     <th scope="col">{{ __('Email') }}</th>
                                     <th scope="col">{{ __('Creation Date') }}</th>
                                     <th scope="col"></th>
@@ -43,10 +44,11 @@
                                 @foreach ($users as $user)
                                     <tr>
                                         <td>{{ $user->firstname }}</td>
+                                        <td>{{ $user ->lastname }}</td>
                                         <td>
                                             <a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
                                         </td>
-                                        <td>{{ $user->created_at->format('d/m/Y H:i') }}</td>
+                                        
                                         <td class="text-right">
                                             <div class="dropdown">
                                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
