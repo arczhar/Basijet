@@ -36,9 +36,18 @@ class UserController extends Controller
      * @param  \App\User  $model
      * @return \Illuminate\Http\RedirectResponse
      */
+<<<<<<< HEAD
     public function store(UserRequest $request, User $model)
     {
         $model->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
+=======
+   
+
+
+    public function store(UserRequest $request, User $model)
+   {
+       $model->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
+>>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
 
         return redirect()->route('user.index')->withStatus(__('User successfully created.'));
     }

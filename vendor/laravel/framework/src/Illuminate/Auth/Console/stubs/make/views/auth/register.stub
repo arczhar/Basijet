@@ -28,7 +28,11 @@
                             <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
 
                             <div class="col-md-6">
+<<<<<<< HEAD
                                 <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+=======
+                                <input id="lasstname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+>>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
 
                                 @error('lastname')
                                     <span class="invalid-feedback" role="alert">
