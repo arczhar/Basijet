@@ -23,6 +23,28 @@
                             
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
                             <div class="pl-lg-4">
+<<<<<<< HEAD
+                                <div class="form-group{{ $errors->has('firstname') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-name">{{ __('First Name') }}</label>
+                                    <input type="text" name="firstname" id="input-name" class="form-control form-control-alternative{{ $errors->has('firstname') ? ' is-invalid' : '' }}" placeholder="{{ __('First Name') }}" value="{{ old('firstname') }}" required autofocus>
+
+                                    @if ($errors->has('firstname'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('firstname') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="form-group{{ $errors->has('lastname') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-name">{{ __('Last Name') }}</label>
+                                    <input type="text" name="lastname" id="input-name" class="form-control form-control-alternative{{ $errors->has('lastname') ? ' is-invalid' : '' }}" placeholder="{{ __('Last Name') }}" value="{{ old('lastname') }}" required autofocus>
+
+                                    @if ($errors->has('lastname'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('lastname') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+=======
                                 <div class="pl-lg-4">
                                     <div class="form-group{{ $errors->has('firstname') ? ' has-danger' : '' }}">
                                         <label class="form-control-label" for="input-name">{{ __('First Name') }}</label>
@@ -56,6 +78,7 @@
                                     </div>
                                     
                                       </div>
+>>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-email">{{ __('Email') }}</label>
                                     <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="{{ old('email') }}" required>

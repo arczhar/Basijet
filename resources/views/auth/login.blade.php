@@ -78,6 +78,13 @@
                             </a>
                         @endif
                     </div>
+<<<<<<< HEAD
+                        <div class="col-6 text-right">
+                            <a href="{{ route('register') }}" class="text-light">
+                                <small>{{ __('Create New Account') }}</small>
+                        </div>
+=======
+>>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
                 </div>
             </div>
         </div>

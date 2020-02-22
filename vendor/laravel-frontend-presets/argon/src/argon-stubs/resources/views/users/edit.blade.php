@@ -24,6 +24,25 @@
 
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
                             <div class="pl-lg-4">
+<<<<<<< HEAD
+                                <div class="form-group{{ $errors->has('firstname') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-name">{{ __('First Name') }}</label>
+                                    <input type="text" name="firstname" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('First Name') }}" value="{{ old('name', $user->firstname) }}" required autofocus>
+
+                                    @if ($errors->has('firstname'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('firstname') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="form-group{{ $errors->has('lastname') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-name">{{ __('Last Name') }}</label>
+                                    <input type="text" name="lasstname" id="input-name" class="form-control form-control-alternative{{ $errors->has('lastname') ? ' is-invalid' : '' }}" placeholder="{{ __('Last Name') }}" value="{{ old('lastname', $user->lastname) }}" required autofocus>
+
+                                    @if ($errors->has('lastname'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('lastname') }}</strong>
+=======
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Name') }}</label>
                                     <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', $user->name) }}" required autofocus>
@@ -31,6 +50,7 @@
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('name') }}</strong>
+>>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
                                         </span>
                                     @endif
                                 </div>

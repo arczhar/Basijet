@@ -98,7 +98,11 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.index') }}">
+<<<<<<< HEAD
+                                    {{ __('Add User') }}
+=======
                                     {{ __('Manage Accounts') }}
+>>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
                                 </a>
                             </li>
                            
