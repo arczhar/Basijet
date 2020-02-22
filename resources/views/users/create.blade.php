@@ -65,10 +65,7 @@
                                         </span>
                                     @endif
                                 </div>
-<<<<<<< HEAD
-=======
                                 
->>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
                                 <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-password">{{ __('Password') }}</label>
                                     <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" value="" required>
@@ -83,14 +80,8 @@
                                     <label class="form-control-label" for="input-password-confirmation">{{ __('Confirm Password') }}</label>
                                     <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('Confirm Password') }}" value="" required>
                                 </div>
-<<<<<<< HEAD
-
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
-=======
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Register') }}</button>
->>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
                                 </div>
                             </div>
                         </form>
