@@ -36,11 +36,15 @@
                                     <th scope="col">{{ __('First Name') }}</th>
                                     <th scope="col">{{ __('Last Name') }}</th>
                                     <th scope="col">{{ __('Email') }}</th>
-<<<<<<< HEAD
+
                                     <th scope="col">{{ __('Creation Date') }}</th>
-=======
+
                                     <th scope="col">{{ __('User Type') }}</th>
->>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
+
+                                    <th scope="col">{{ __('Creation Date') }}</th>
+
+                                    <th scope="col">{{ __('User Type') }}</th>
+
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -52,11 +56,11 @@
                                         <td>
                                             <a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
                                         </td>
-<<<<<<< HEAD
-                                        
-=======
+
                                         <td>{{ $user ->usertype }}</td>
->>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
+
+                                        <td>{{ $user ->usertype }}</td>
+
                                         <td class="text-right">
                                             <div class="dropdown">
                                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

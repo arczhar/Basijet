@@ -25,11 +25,14 @@
                     <div class="row align-items-center">
                       <div class="col-md-7 col-12 order-md-1 order-2">
                         <h4>Stay Updated</h4>
-<<<<<<< HEAD
+
                         <p>SRSS sends you text updates on the status of your status.</p>
-=======
+
                         <p>SRSS sends you text updates on the status of your request.</p>
->>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
+
+                        <p>SRSS sends you text updates on the status of your status.</p>
+
+
                         </div>
                       <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/L1pGpR9.png" class="mx-auto" alt="slide"></div>
                     </div>
