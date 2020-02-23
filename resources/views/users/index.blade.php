@@ -37,13 +37,11 @@
                                     <th scope="col">{{ __('Last Name') }}</th>
                                     <th scope="col">{{ __('Email') }}</th>
 
-                                    <th scope="col">{{ __('Creation Date') }}</th>
+                        
 
                                     <th scope="col">{{ __('User Type') }}</th>
 
-                                    <th scope="col">{{ __('Creation Date') }}</th>
-
-                                    <th scope="col">{{ __('User Type') }}</th>
+                                   
 
                                     <th scope="col"></th>
                                 </tr>
@@ -59,7 +57,7 @@
 
                                         <td>{{ $user ->usertype }}</td>
 
-                                        <td>{{ $user ->usertype }}</td>
+                                        
 
                                         <td class="text-right">
                                             <div class="dropdown">
