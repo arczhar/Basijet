@@ -78,13 +78,12 @@
                             </a>
                         @endif
                     </div>
-<<<<<<< Updated upstream
+
                         <div class="col-6 text-right">
                             <a href="{{ route('register') }}" class="text-light">
                                 <small>{{ __('Create New Account') }}</small>
                         </div>
-=======
->>>>>>> Stashed changes
+r
                 </div>
             </div>
         </div>

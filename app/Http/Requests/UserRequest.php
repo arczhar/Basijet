@@ -25,19 +25,18 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-<<<<<<< Updated upstream
+
             'name' => [
                 'required', 'min:3'
             ],
-=======
+
             'firstname' => [
                 'required', 'min:3'
             ],
             'lastname' => [
                 'required', 'min:3'
             ],'usertype' => [ 'required'],
->>>>>>> Stashed changes
+
             'email' => [
                 'required', 'email', Rule::unique((new User)->getTable())->ignore($this->route()->user->id ?? null)
             ],
