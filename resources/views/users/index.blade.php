@@ -36,11 +36,15 @@
                                     <th scope="col">{{ __('First Name') }}</th>
                                     <th scope="col">{{ __('Last Name') }}</th>
                                     <th scope="col">{{ __('Email') }}</th>
-<<<<<<< Updated upstream
+
                                     <th scope="col">{{ __('Creation Date') }}</th>
-=======
+
                                     <th scope="col">{{ __('User Type') }}</th>
->>>>>>> Stashed changes
+
+                                    <th scope="col">{{ __('Creation Date') }}</th>
+
+                                    <th scope="col">{{ __('User Type') }}</th>
+
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -52,11 +56,11 @@
                                         <td>
                                             <a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
                                         </td>
-<<<<<<< Updated upstream
-                                        
-=======
+
                                         <td>{{ $user ->usertype }}</td>
->>>>>>> Stashed changes
+
+                                        <td>{{ $user ->usertype }}</td>
+
                                         <td class="text-right">
                                             <div class="dropdown">
                                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

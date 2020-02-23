@@ -20,6 +20,10 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'firstname' => $faker->firstname,
         'lastname' => $faker->lastname,
+<<<<<<< HEAD
+=======
+        'usertype'=> $faker->usertype,
+>>>>>>> 565ae6ce3bfc6c1d0e3212e98edb003092be2a4d
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

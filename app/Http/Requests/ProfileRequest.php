@@ -25,13 +25,12 @@ class ProfileRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-<<<<<<< Updated upstream
+
             'name' => ['required', 'min:3'],
-=======
+
             'firstname' => ['required', 'min:3'],
             'lastname' => ['required', 'min:3'],
->>>>>>> Stashed changes
+
             'email' => ['required', 'email', Rule::unique((new User)->getTable())->ignore(auth()->id())],
         ];
     }
