@@ -49,15 +49,23 @@
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group{{ $errors->has('usertype') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-usertype">{{ __('User Type') }}</label>
-                                    <input type="text" name="usertype" id="input-usertype" class="form-control form-control-alternative{{ $errors->has('usertype') ? ' is-invalid' : '' }}" placeholder="{{ __(' eg. Admin, Client, Secretary, Technician') }}" value="{{ old('usertype') }}" required autofocus>
-
-                                    @if ($errors->has('usertype'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('usertype') }}</strong>
-                                        </span>
-                                    @endif
+                                
+                                <label class="form-control-label" for="input-usertype">{{ __('User  Type') }}</label>
+                                <div class="input-group mb-3 {{ $errors->has('usertype') ? ' has-danger' : '' }}" input type="text">
+                                    <select class="custom-select{{ $errors->has('usertype') ? ' is-invalid' : '' }}" id="input-usertype"  name="usertype">
+                                        <option selected>Choose...</option>
+                                        <option value="{{ old('usertype') }}">Admin</option>
+                                        <option value="{{ old('usertype') }}">Client</option>
+                                        <option value="{{ old('usertype') }}">Secretary</option>
+                                        <option value="{{ old('usertype') }}">Technician</option>
+                                        
+                                        @if ($errors->has('usertype'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('usertype') }}</strong>
+                                            </span>
+                                        @endif
+                                    </select>
+                                
                                 </div>
                                 
                                   </div>
