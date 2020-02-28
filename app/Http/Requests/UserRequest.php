@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use App\User;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Input;
 
 class UserRequest extends FormRequest
 {
@@ -31,7 +32,8 @@ class UserRequest extends FormRequest
             ],
             'lastname' => [
                 'required', 'min:3'
-            ],'usertype' => [ 'required'],
+            ],
+            'usertype' =>  ['required'],
             'email' => [
                 'required', 'email', Rule::unique((new User)->getTable())->ignore($this->route()->user->id ?? null)
             ],
