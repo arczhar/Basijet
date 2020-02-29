@@ -19,7 +19,6 @@
                     </div>
                     <div class="card-body">
 
-                        <form method="post" action="{{ route('user.store') }}" autocomplete="off">
 
                         <form method="POST" action="{{ route('user.store') }}" autocomplete="off">
 
@@ -27,7 +26,6 @@
                             
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
                             <div class="pl-lg-4">
-               
 
                                 <div class="form-group{{ $errors->has('firstname') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('First Name') }}</label>
@@ -51,13 +49,14 @@
                                 </div>
                                 
                                 <label class="form-control-label" for="input-usertype">{{ __('User  Type') }}</label>
-                                <div class="input-group mb-3 {{ $errors->has('usertype') ? ' has-danger' : '' }}" input type="text">
+                                <div class="input-group mb-3 {{ $errors->has            ('usertype')    ? ' has-danger' : '' }}" input type="text">
                                     <select class="custom-select{{ $errors->has('usertype') ? ' is-invalid' : '' }}" id="input-usertype"  name="usertype">
-                                        <option selected>Choose...</option>
-                                        <option value="{{ old('usertype') }}">Admin</option>
-                                        <option value="{{ old('usertype') }}">Client</option>
-                                        <option value="{{ old('usertype') }}">Secretary</option>
-                                        <option value="{{ old('usertype') }}">Technician</option>
+                                        <option selected">Choose...</option>
+                                        <option value="Admin">Admin</option>
+                                        <option value="Client">Client</option>
+                                        <option value="Secretary">Secretary</option>
+                                        <option value="Technician">Technician</option>
+                                      
                                         
                                         @if ($errors->has('usertype'))
                                             <span class="invalid-feedback" role="alert">
@@ -97,8 +96,7 @@
                                 </div>
 
 
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
+                                
 
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Register') }}</button>
