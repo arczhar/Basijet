@@ -14,7 +14,7 @@
                         <h4>Request service anywhere</h4>
                         <p>Request service to fix your office airconditioning unit, refrigirator, water dispenser and more right on your computer or mobile phone.</p>
                         </div>
-                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/I1Bpr0O.png" class="mx-auto" alt="slide"></div>
+                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="{{url('/argon/img/carousel/request.png') }}" class="mx-auto" alt="slide"></div>
                     </div>
                   </div>
                 </div>
@@ -27,7 +27,7 @@
                         <h4>Stay Updated</h4>
                         <p>SRSS sends you text updates on the status of your request.</p>
                         </div>
-                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/L1pGpR9.png" class="mx-auto" alt="slide"></div>
+                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="{{url('/argon/img/carousel/notif.png') }}" class="mx-auto" alt="slide"></div>
                     </div>
                   </div>
                 </div>
@@ -40,7 +40,7 @@
                         <h4>Great Customer Service</h4>
                         <p>Property Management Office ensures that you are entitled to open dispute when you didn't receive your unit or it malfunctioned after service.</p>
                          </div>
-                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/tSCe2Kt.png" class="mx-auto" alt="slide"></div>
+                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="{{url('/argon/img/carousel/dispute.png') }}" class="mx-auto" alt="slide"></div>
                     </div>
                   </div>
                 </div>
