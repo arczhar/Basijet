@@ -49,6 +49,7 @@
                                 </div>
                                 
                                 <label class="form-control-label" for="input-usertype">{{ __('User  Type') }}</label>
+<<<<<<< HEAD
                                 <div class="input-group mb-3 {{ $errors->has            ('usertype')    ? ' has-danger' : '' }}" input type="text">
                                     <select class="custom-select{{ $errors->has('usertype') ? ' is-invalid' : '' }}" id="input-usertype"  name="usertype">
                                         <option selected">Choose...</option>
@@ -57,6 +58,15 @@
                                         <option value="Secretary">Secretary</option>
                                         <option value="Technician">Technician</option>
                                       
+=======
+                                <div class="input-group mb-3 {{ $errors->has('usertype') ? ' has-danger' : '' }}" input type="text">
+                                    <select class="custom-select{{ $errors->has('usertype') ? ' is-invalid' : '' }}" id="input-usertype"  name="usertype">
+                                        <option selected>Choose...</option>
+                                        <option value="{{ old('usertype') }}">Admin</option>
+                                        <option value="{{ old('usertype') }}">Client</option>
+                                        <option value="{{ old('usertype') }}">Secretary</option>
+                                        <option value="{{ old('usertype') }}">Technician</option>
+>>>>>>> Jhet
                                         
                                         @if ($errors->has('usertype'))
                                             <span class="invalid-feedback" role="alert">
