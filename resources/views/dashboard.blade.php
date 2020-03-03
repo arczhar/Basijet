@@ -63,7 +63,68 @@
         @elseif(Auth::user()->type == 'User')
             <div class="row">
                 <div class="col-12">
-                    <h1>User's dashboard</h1>
+                    <BR>
+                    <h1><strong>USERS DASHBOARD<strong></h1>
+                    <BR>
+                    <BR>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">SEND REQUEST</button>
+                      
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="exampleModalLabel"><strong>Request Maintenance Equipment Form<Strong></h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">DATE</label>
+                                        <div class="input-group input-group-alternative">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                            </div>
+                                            <input class="form-control datepicker" placeholder="Select date" type="text" value="06/20/2018">
+                                        </div>
+                                        <label for="recipient-name" class="col-form-label">RM. NO.</label>
+                                        <div class="input-group input-group-alternative">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                            </div>
+                                            <input class="form-control datepicker" placeholder="Select date" type="text" value="00000">
+                                        </div>
+
+
+                                        <label for="recipient-name" class="col-form-label">COLLEGE OR OFFICE</label>
+                                            <div class="input-group mb-3" input type="text">
+                                                <select class="custom-select" id="input-college"  name="college">
+                                                    <option selected">Choose...</option>
+                                                    <option value="Admin">ICS</option>
+                                                    <option value="Client">CET</option>
+                                                    <option value="Secretary">CTE</option>
+                                                    <option value="Technician">CPERS</option>
+                                                </select>
+                                            </div>
+                                            <label for="recipient-name" class="col-form-label">EQUIPMENT UNIT MODEL</label>
+                                        <div class="input-group input-group-alternative">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class=""></i></span>
+                                            </div>
+                                            <input class="form-control datepicker" placeholder="EQUIPMENT UNIT MODEL" type="text" value="">
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Send Request</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
                 </div>
             </div>
         @endif

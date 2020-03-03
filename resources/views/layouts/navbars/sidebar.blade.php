@@ -84,9 +84,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                @if(Auth::user()->type== 'Admin')
                     <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
-                        <i class="ni ni-circle-08" style="color: #f4645f;"></i>
+                    
+                            <i class="ni ni-circle-08" style="color: #f4645f;"></i>
+                        
                         <span class="nav-link-text" style="color: #f4645f;">{{ __('Users') }}</span>
+                        
                     </a>
 
                     <div class="collapse " id="navbar-examples">
@@ -105,11 +109,14 @@
                             </li>
                         </ul>
                     </div>
+                    @endif
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-badge text-primary"></i> {{ __('Employees') }}
-                    </a>
+                    @if(Auth::user()->type== 'Admin')
+                        <a class="nav-link" href="#">
+                            <i class="ni ni-badge text-primary"></i> {{ __('Employees') }}
+                        </a>
+                    @endif
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
