@@ -77,6 +77,7 @@
                 </div>
             </form>
             <!-- Navigation -->
+            @if(Auth::user()->type== 'Admin')
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ route('home') }}">
@@ -117,6 +118,31 @@
                     </a>
                 </li>
             </ul>
+            @elseif(Auth::user()->type == 'Client')
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ route('home') }}">
+                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="ni ni-badge text-primary"></i> {{ __('Request') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="ni ni-single-copy-04 text-primary"></i> {{ __('Reports') }}
+                    </a>
+                </li>
+                <li class ="nav-item">
+                    <a class="nav-link " href="{{ route('profile.edit') }}">
+                        <i class="ni ni-circle-08" style="color: #f4645f;"></i>{{ __('Profile') }}
+                    </a>
+                </li>
+               
+            </ul>
+            @endif
             <!-- Divider -->
             <hr class="my-3">
             <!-- Heading -->
