@@ -32,12 +32,12 @@
                                         </div>
                                         <input class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" placeholder="{{ __('Last Name') }}" type="text" name="lastname" value="{{ old('lastname') }}" required autofocus>
                                     </div>
-                                    <div class="form-group{{ $errors->has('usertype') ? ' has-danger' : '' }}">
+                                    <div class="form-group{{ $errors->has('type') ? ' has-danger' : '' }}">
                                     <div class="input-group input-group-alternative mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                         </div>
-                                        <input class="form-control{{ $errors->has('usertype') ? ' is-invalid' : '' }}" placeholder="{{ __('User Type') }}" type="text" name="usertype" value="{{ old('usertype') }}" required autofocus>
+                                        <input class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" placeholder="{{ __('User Type') }}" type="text" name="type" value="{{ old('type') }}" required autofocus>
                                     </div>
                                 @if ($errors->has('firstname'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -49,9 +49,9 @@
                                         <strong>{{ $errors->first('lastname') }}</strong>
                                     </span>
                                 @endif
-                                @if ($errors->has('usertype'))
+                                @if ($errors->has('type'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
-                                        <strong>{{ $errors->first('usertye') }}</strong>
+                                        <strong>{{ $errors->first('type') }}</strong>
                                     </span>
                                 @endif
                             </div>

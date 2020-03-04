@@ -60,10 +60,22 @@
                     </div>
                 </div>
             </div>
-        @elseif(Auth::user()->type == 'User')
+        @elseif(Auth::user()->type == 'Client')
             <div class="row">
                 <div class="col-12">
                     <h1>User's dashboard</h1>
+                </div>
+            </div>
+        @elseif(Auth::user()->type == 'Secretary')
+            <div class="row">
+                <div class="col-12">
+                    <h1>Secretary's dashboard</h1>
+                </div>
+            </div> 
+        @elseif(Auth::user()->type == 'Technician')
+            <div class="row">
+                <div class="col-12">
+                    <h1>Technician's dashboard</h1>
                 </div>
             </div>
         @endif

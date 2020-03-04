@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('user.update', $user) }}" autocomplete="off">
+                        <form method="POST" action="{{ route('user.update', $user) }}" autocomplete="off">
                             @csrf
                             @method('put')
 
