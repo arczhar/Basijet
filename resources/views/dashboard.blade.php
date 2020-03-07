@@ -63,6 +63,7 @@
         @elseif(Auth::user()->type == 'Client')
             <div class="row">
                 <div class="col-12">
+
                     <h1>Client's Homepage </h1>
                     {{-- <div class="col-xl-8"> --}}
                         <div class="card">
@@ -199,13 +200,6 @@
                           </div>
                         </div>
                       </div>
-
-
-                     
-
-
-
-
                 </div>
             </div>
             
@@ -219,6 +213,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Technician's dashboard</h1>
+
                 </div>
             </div>
         @endif
