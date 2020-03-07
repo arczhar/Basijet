@@ -63,9 +63,152 @@
         @elseif(Auth::user()->type == 'Client')
             <div class="row">
                 <div class="col-12">
-                    <h1>User's dashboard</h1>
+                    <h1>Client's Homepage </h1>
+                    {{-- <div class="col-xl-8"> --}}
+                        <div class="card">
+                          <div class="card-header border-0">
+                            <div class="row align-items-center">
+                              <div class="col">
+                                <h3 class="mb-0">Page visits</h3>
+                              </div>
+                              <div class="col text-right">
+                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive">
+                            <!-- Projects table -->
+                            <div class="table-responsive">
+                              <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                  <tr>
+                                    <th scope="col" class="sort" data-sort="name">Service Type</th>
+                                    <th scope="col" class="sort" data-sort="property">Property</th>
+                                    <th scope="col" class="sort" data-sort="property-number">Property Number</th>
+                                    <th scope="col">Status</th>
+                                  </tr> 
+                                </thead>
+                                <tbody class="list">
+                                  <tr>
+                                    <th scope="row">
+                                      <div class="media align-items-center">
+                                        <div class="media-body">
+                                          <span class="name mb-0 text-sm">Cleaning</span>
+                                        </div>
+                                      </div>
+                                    </th>
+                                    <td class="property">
+                                     Electrifan
+                                    </td>
+                
+                                    <td>
+                                      <td>
+                                        <span class="badge badge-dot mr-4">
+                                          <i class="bg-warning"></i>
+                                          <span class="property-number">Pending</span>
+                                        </span>
+                                      </td>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">
+                                      <div class="media align-items-center">
+                                        <div class="media-body">
+                                          <span class="name mb-0 text-sm">Repair</span>
+                                        </div>
+                                      </div>
+                                    </th>
+                                    <td class="property">
+                                      Computer
+                                    </td>
+                
+                                    <td>
+                                      <td>
+                                        <span class="badge badge-dot mr-4">
+                                          <i class="bg-success"></i>
+                                          <span class="property-number">Completed</span>
+                                        </span>
+                                      </td>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">
+                                      <div class="media align-items-center">
+                                        <div class="media-body">
+                                          <span class="name mb-0 text-sm">Transfer</span>
+                                        </div>
+                                      </div>
+                                    </th>
+                                    <td class="property">
+                                      Refrigerator
+                                    </td>
+                                    <td>
+                
+                                    </td>
+                                    <td> 
+                                      <span class="badge badge-dot mr-4">
+                                        <i class="bg-primary"></i>
+                                        <span class="property-number">Processing</span>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">
+                                      <div class="media align-items-center">
+                                        <div class="media-body">
+                                          <span class="name mb-0 text-sm">Repair</span>
+                                        </div>
+                                      </div>
+                                    </th>
+                                    <td class="property">
+                                      Aircon
+                                    </td>
+                                    <td>
+                
+                                    </td>
+                                    <td>
+                                      <span class="badge badge-dot mr-4">
+                                        <i class="bg-yellow"></i>
+                                        <span class="property-number">Waiting Confirmation Delivery</span>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">
+                                      <div class="media align-items-center">
+                                        <div class="media-body">
+                                          <span class="name mb-0 text-sm">Repair</span>
+                                        </div>
+                                      </div>
+                                    </th>
+                                    <td class="property">
+                                     Aircon
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                      <span class="badge badge-dot mr-4">
+                                        <i class="bg-primary"></i>
+                                        <span class="property-number">Approved</span>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                     
+
+
+
+
                 </div>
             </div>
+            
         @elseif(Auth::user()->type == 'Secretary')
             <div class="row">
                 <div class="col-12">
