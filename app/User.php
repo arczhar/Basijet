@@ -50,3 +50,4 @@ class User extends Authenticatable
         $this->attributes['password'] = ($value);
     }
 }
+/* 1.0 SA SE!!!!! */
