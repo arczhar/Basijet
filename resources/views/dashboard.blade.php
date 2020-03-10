@@ -199,13 +199,6 @@
                           </div>
                         </div>
                       </div>
-
-
-                     
-
-
-
-
                 </div>
             </div>
             
@@ -219,6 +212,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Technician's dashboard</h1>
+
                 </div>
             </div>
         @endif
