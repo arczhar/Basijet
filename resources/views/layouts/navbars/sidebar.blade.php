@@ -126,8 +126,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                <a class="nav-link" href="#">
                         <i class="ni ni-badge text-primary"></i> {{ __('Request') }}
+                        
                     </a>
                 </li>
                 <li class="nav-item">
