@@ -43,32 +43,25 @@
                                             <strong>{{ $errors->first('lastname') }}</strong>
                                         </span>
                                     @endif
-                                </div>
+                                    <label class="form-control-label" for="input-usertype">{{ __('User  Type') }}</label>
+
+                                    <div class="input-group mb-3 {{ $errors->has('type') ? ' has-danger' : '' }}" input type="text">
+                                        <select class="custom-select{{ $errors->has('type') ? ' is-invalid' : '' }}" id="input-usertype"  name="type" >
+                                            <option value="Client">Client</option>
+                                            <option value="Secretary">Secretary</option>
+                                            <option value="Technician">Technician</option>
+                                        </select>
+                                    </div> 
+                               
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-email">{{ __('Email') }}</label>
                                     <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="{{ old('email', $user->email) }}" required>
-
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-password">{{ __('Password') }}</label>
-                                    <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" value="">
-                                    
-                                    @if ($errors->has('password'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Confirm Password') }}</label>
-                                    <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('Confirm Password') }}" value="">
-                                </div>
-
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>

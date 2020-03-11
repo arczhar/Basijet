@@ -39,7 +39,7 @@ class ProfileController extends Controller
      */
     public function password(PasswordRequest $request)
     {
-        auth()->user()->update(['password' => Hash::make($request->get('password'))]);
+        auth()->user()->update(['password' => ($request->get('password'))]);
 
         return back()->withPasswordStatus(__('Password successfully updated.'));
     }
