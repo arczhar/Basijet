@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
-Route::get('/Request' , 'SendRequestController@index');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -24,5 +24,5 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
-
-Route::resource('/request', 'SendRequestController');
+Route::get('/Request' , 'SendRequestController@index')->name('Request');
+Route::resource('request', 'SendRequestController@index');

@@ -11,12 +11,6 @@
             <li class="nav-item">
                 <a href="#" class="nav-link" target="_blank">About Us</a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link" target="_blank">Contact the Devs</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link" target="_blank">Blog</a>
-            </li>
         </ul>
     </div>
 </div>

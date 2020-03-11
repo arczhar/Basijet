@@ -15,12 +15,14 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('date');
+            $table->date('date');
             $table->string('rmno');
             $table->string('college');
             $table->integer('equipment');
             $table->string('propertynumber');
             $table->string('quantity');
+            $table->string('service');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
