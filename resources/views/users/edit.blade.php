@@ -43,19 +43,30 @@
                                             <strong>{{ $errors->first('lastname') }}</strong>
                                         </span>
                                     @endif
-                                </div>
+                                    <label class="form-control-label" for="input-usertype">{{ __('User  Type') }}</label>
+
+                                    <div class="input-group mb-3 {{ $errors->has('type') ? ' has-danger' : '' }}" input type="text">
+                                        <select class="custom-select{{ $errors->has('type') ? ' is-invalid' : '' }}" id="input-usertype"  name="type" >
+                                            <option value="Client">Client</option>
+                                            <option value="Secretary">Secretary</option>
+                                            <option value="Technician">Technician</option>
+                                        </select>
+                                    </div> 
+                               
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-email">{{ __('Email') }}</label>
                                     <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="{{ old('email', $user->email) }}" required>
-
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                                     @endif
                                 </div>
+<<<<<<< HEAD
                                
 
+=======
+>>>>>>> 264160d7c86ea6004fb16452bffaf79d07ccc1f0
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>
