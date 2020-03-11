@@ -51,10 +51,9 @@
                                 <label class="form-control-label" for="input-usertype">{{ __('User  Type') }}</label>
 
                                 <div class="input-group mb-3 {{ $errors->has            ('type')    ? ' has-danger' : '' }}" input type="text">
-                                    <select class="custom-select{{ $errors->has('type') ? ' is-invalid' : '' }}" id="input-usertype"  name="type">
+                                    <select class="custom-select{{ $errors->has('type') ? ' is-invalid' : '' }}" id="input-usertype"  name="type" >
 
-                                        <option selected">Choose...</option>
-                                        <option value="Admin">Admin</option>
+                                      
                                         <option value="Client">Client</option>
                                         <option value="Secretary">Secretary</option>
                                         <option value="Technician">Technician</option>
