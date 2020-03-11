@@ -62,6 +62,11 @@
                                         </span>
                                     @endif
                                 </div>
+<<<<<<< HEAD
+                               
+
+=======
+>>>>>>> 264160d7c86ea6004fb16452bffaf79d07ccc1f0
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>

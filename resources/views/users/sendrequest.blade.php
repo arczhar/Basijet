@@ -22,17 +22,19 @@
                                                 <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
+                                            <form action="{{action('SendRequestController@store')}}" method="POST">  
+                                             {{csrf_field()}}  
                                             <div class="modal-body">
                                                 <form>
                                                     <div class="row">
                                                       <div class="col-md-6">
                                                         <div class="form-group">
-                                                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Date">
+                                                          <input type="email" class="form-control" placeholder="Date"  name="date">
                                                         </div>
                                                       </div>
                                                       <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="RM NO.">
+                                                            <input type="email" class="form-control"  placeholder="RM NO."  name="rmno">
                                                         </div>
                                                       </div>
                                                     </div>
@@ -43,14 +45,14 @@
                                                             <div class="input-group-prepend">
                                                               <span class="input-group-text"><i class=""></i></span>
                                                             </div>
-                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="College Office">
+                                                            <input type="email" class="form-control" placeholder="College"  name="college">
                                                           </div>
                                                         </div>
                                                       </div>
                                                       <div class="col-md-6">
                                                         <div class="form-group">
                                                           <div class="input-group mb-4">
-                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Equipment/Unit/Model">
+                                                            <input type="email" class="form-control"  placeholder="Equipment/Unit/Model" name="equipment">
                                                             <div class="input-group-append">
                                                               <span class="input-group-text"><i class="#"></i></span>
                                                             </div>
@@ -61,26 +63,24 @@
                                                     <div class="row">
                                                       <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Property Number">
+                                                            <input type="email" class="form-control"  placeholder="Property Number" name="propertynumber">
                                                         </div>
                                                       </div>
                                                       <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Quantity/Unit">
+                                                            <input type="email" class="form-control"  placeholder="Quantity/Unit" name="quantity">
                                                         </div>
                                                       </div>
                                                     </div>
                                                     <h3 class="modal-title" id="exampleModalLabel">Nature of Request</h3>
-                                                    <br>
-                                                   
-                                                        
-                                                
+                                                    <br>   
                                                 </form>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Send message</button>
+                                                <button type="submit" class="btn btn-primary">Send message</button>
                                             </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
