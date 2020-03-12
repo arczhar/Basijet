@@ -107,7 +107,7 @@
                                 </a>
                             </li>
                            
-                            </li>
+                            
                         </ul>
                     </div>
                     @endif
@@ -124,6 +124,12 @@
                         <i class="ni ni-single-copy-04 text-primary"></i> {{ __('Reports') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('Request') }}">
+                            <i class="ni ni-badge text-primary"></i> {{ __('Pending Requests') }}
+                            
+                        </a>
+                    </li>
             </ul>
             @elseif(Auth::user()->type == 'Client')
             <ul class="navbar-nav">
@@ -156,13 +162,6 @@
             <!-- Heading -->
             <h6 class="navbar-heading text-muted">Documentation</h6>
             <!-- Navigation -->
-            <ul class="navbar-nav mb-md-3">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-spaceship"></i> Getting Started
-                    </a>
-                </li>
-            </ul>
         </div>
     </div>
 </nav>

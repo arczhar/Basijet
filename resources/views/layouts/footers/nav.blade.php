@@ -7,7 +7,7 @@
     <div class="col-xl-6">
         <ul class="nav nav-footer justify-content-center justify-content-xl-end">
             <li class="nav-item">
-                <a href="#" class="nav-link" target="_blank">Basijet</a>
+                <a href="#" class="nav-link" target="_blank"><i class="ni ni-spaceship"></i>  Basijet</a>
             <li class="nav-item">
                 <a href="#" class="nav-link" target="_blank">About Us</a>
             </li>

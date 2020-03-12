@@ -4,19 +4,7 @@
     @include('layouts.headers.cards')
     
     <div class="container-fluid mt--7">
-      <div>
-        @if($errors ->any())
-          <div class="col-12 alert alert-danger">
-              <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    
-                @endforeach
-              </ul>
-
-          </div>
-        @endif
-      </div>
+      
     @if(Auth::user()->type== 'Client')
             <div class="row">
                 <div class="col-12">
@@ -25,6 +13,24 @@
                         <div class="card">
                             <div class="card-header border-0">               
                                 {{--Modal--}}
+                                <div>
+                                  @if($errors ->any())
+                                    <div class="col-12 alert alert-danger">
+                                        <ul>
+                                          @foreach ($errors->all() as $error)
+                                              <li>{{ $error }}</li>
+                                              
+                                        </div>
+                                          @endforeach
+                                        </ul>
+                                  @else    
+                                    <div class="col-12 alert alert-success alert-dismissable fade show" role="alert">
+                                       Your Request has been<strong> sucessfully</strong> sent. Please wait for the <strong> approval</strong>
+                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                  @endif
+                                </div>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Add Request</button>
                                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
@@ -59,7 +65,7 @@
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text"><i class=""></i></span>
                                                                 </div>
-                                                                  <input type="text" class="form-control" placeholder="College"  name="college"required>
+                                                                  <input type="text" class="form-control" placeholder="Office"  name="college"required>
                                                               </div>
                                                           </div>
                                                         </div>
@@ -89,19 +95,19 @@
                                                     <h3 class="modal-title" id="exampleModalLabel">Nature of Request</h3>
                                                     <div class="row">
                                                         <div class="col-md-8"> 
-                                                          <input type="radio" name="service" value="repair" checked> Repair
-                                                          <input type="radio" name="service" value="cleaning" checked> Cleaning
-                                                          <input type="radio" name="service" value="wiring" checked> Wiring
+                                                          <input type="radio" name="service" value="Repair" > Repair
+                                                          <input type="radio" name="service" value="Cleaning" > Cleaning
+                                                          <input type="radio" name="service" value="Wiring" > Wiring
+                                                          <input type="radio" name="service" value="Tech Support" > Technical Support
                                                           <br>
-                                                          <label for="others">Others</label>
-                                                        </div>
+                                                          
+                                                         
                                                       </div>
                                                     <br>
                                                     <div class="modal-footer">
                                                     
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                     <button type="submit" class="btn btn-primary">Send Request</button>
-                                                    
                                                   </div>
                                       </form>
                                             </div>
@@ -114,10 +120,63 @@
                         </div>
                       </div>
                 </div>
-                          
-        @endif
-        @include('layouts.footers.auth')
+        @elseif(Auth::user()->type== 'Admin')
+        <div class="card">
+          <div class="card-header border-0">
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="mb-0">Requests</h3>
+              </div>
+              
+            </div>
+          </div>
+          <div class="table-responsive">
+            <!-- Projects table -->
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">{{ __('Service Type')}}</th>
+                    <th scope="col">{{ __('Equipment')}}</th>
+                    <th scope="col">{{ __('Property Number')}}</th>
+                    <th scope="col">{{ __('Office')}}</th>
+                    <th scope="col">{{ __('Quantity')}}</th>
+                    <th scope="col">{{ __('Date')}}</th>
+                    <th scope="col">{{ __('Status')}}</th>
+                    <th scope="col"></th>
+                  </tr> 
+                </thead>
+                <tbody class="list">
+                  @foreach ($requests as $request)
+                  <tr>
+                    <td>{{ $request->service }}</td>
+                    <td>{{ $request->equipment}}</td>
+                    <td>{{ $request->propertynumber}}</td>
+                    <td>{{ $request->college}}</td>
+                    <td>{{ $request->quantity}}</td>
+                    <td>{{ $request->date}}</td>
+                    <td>{{ $request->status}}</td>
+                    <td class="text-right">
+                      <div class="dropdown">
+                          <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-ellipsis-v"></i>
+                          </a>
+                  @endforeach 
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      @endif
+    
     </div>
+    
+    </div>
+        @include('layouts.footers.auth')
+    </div>  
 @endsection
 
 @push('js')
