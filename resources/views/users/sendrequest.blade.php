@@ -4,19 +4,7 @@
     @include('layouts.headers.cards')
     
     <div class="container-fluid mt--7">
-      <div>
-        @if($errors ->any())
-          <div class="col-12 alert alert-danger">
-              <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    
-                @endforeach
-              </ul>
-
-          </div>
-        @endif
-      </div>
+      
     @if(Auth::user()->type== 'Client')
             <div class="row">
                 <div class="col-12">
@@ -25,6 +13,24 @@
                         <div class="card">
                             <div class="card-header border-0">               
                                 {{--Modal--}}
+                                <div>
+                                  @if($errors ->any())
+                                    <div class="col-12 alert alert-danger">
+                                        <ul>
+                                          @foreach ($errors->all() as $error)
+                                              <li>{{ $error }}</li>
+                                              
+                                        </div>
+                                          @endforeach
+                                        </ul>
+                                  @else    
+                                    <div class="col-12 alert alert-success alert-dismissable fade show" role="alert">
+                                       Your Request has been<strong> sucessfully</strong> sent. Please wait for the <strong> PMO Office for approval</strong>
+                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                  @endif
+                                </div>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Add Request</button>
                                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
@@ -101,7 +107,6 @@
                                                     
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                     <button type="submit" class="btn btn-primary">Send Request</button>
-                                                    
                                                   </div>
                                       </form>
                                             </div>
