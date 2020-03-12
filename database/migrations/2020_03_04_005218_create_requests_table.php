@@ -22,7 +22,7 @@ class CreateRequestsTable extends Migration
             $table->string('propertynumber');
             $table->integer('quantity');
             $table->string('service');
-            $table->string('status')->default('pending');
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }
