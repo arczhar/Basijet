@@ -46,7 +46,7 @@ class SendRequestController extends Controller
             'equipment'=>'required',
             'propertynumber'=>'required',
             'quantity'=>'required',
-            'service'=>'required'        
+            'service'=>'required',        
         ]);
         $reqs = new Request;
 
@@ -56,12 +56,12 @@ class SendRequestController extends Controller
         $reqs->equipmet = $request->input('equipment');
         $reqs->propertynumber = $request->input('propertynumber');
         $reqs->quantity = $request->input('quantity');
-        $reqs->stype = $request->input('service');
+        $reqs->service = $request->input('service');
         
         $reqs->save();
         
 
-        return redirect()->route('request')->with(__('Request successfully Sent.'));
+        return redirect()->route('users.sendrequest')->withstatus(__('Request successfully Sent.'));
     }
 
     /**

@@ -25,4 +25,4 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 Route::get('/Request' , 'SendRequestController@index')->name('Request');
-Route::resource('request', 'SendRequestController@index');
+Route::resource('/request', 'SendRequestController');

@@ -89,9 +89,9 @@
                                                     <h3 class="modal-title" id="exampleModalLabel">Nature of Request</h3>
                                                     <div class="row>
                                                         <div class="col-md-8"> 
-                                                          <input type="radio" name="stype" value="repair" checked> Repair
-                                                          <input type="radio" name="stype" value="cleaning" checked> Cleaning
-                                                          <input type="radio" name="stype" value="wiring" checked> Wiring
+                                                          <input type="radio" name="service" value="repair" checked> Repair
+                                                          <input type="radio" name="service" value="cleaning" checked> Cleaning
+                                                          <input type="radio" name="service" value="wiring" checked> Wiring
                                                           <br>
                                                           <label for="others">Others</label>
                                                         

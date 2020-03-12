@@ -13,14 +13,14 @@ class CreateRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('requests', function (Blueprint $table) {
+        Schema::create('request', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->date('date');
             $table->string('rmno');
             $table->string('college');
-            $table->integer('equipment');
+            $table->string('equipment');
             $table->string('propertynumber');
-            $table->string('quantity');
+            $table->integer('quantity');
             $table->string('service');
             $table->string('status')->default('pending');
             $table->timestamps();
@@ -34,6 +34,6 @@ class CreateRequestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('requests');
+        Schema::dropIfExists('request');
     }
 }
