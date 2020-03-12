@@ -25,7 +25,7 @@
                                         </ul>
                                   @else    
                                     <div class="col-12 alert alert-success alert-dismissable fade show" role="alert">
-                                       Your Request has been<strong> sucessfully</strong> sent. Please wait for the <strong> PMO Office for approval</strong>
+                                       Your Request has been<strong> sucessfully</strong> sent. Please wait for the <strong> approval</strong>
                                       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
                                       </button>
                                     </div>
