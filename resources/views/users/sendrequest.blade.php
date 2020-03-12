@@ -35,8 +35,8 @@
                                                 <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                          <form method="POST" action="{{ route('request.store') }} >  
-                                             {{csrf_field()}}  
+                                          <form method="POST" action="{{ route('request.store') }}" >  
+                                             @csrf
                                             <div class="modal-body">
                                                 <form>
                                                     <div class="row">
@@ -57,7 +57,7 @@
                                                           <div class="form-group">
                                                               <div class="input-group mb-4">
                                                                 <div class="input-group-prepend">
-                                                                  <span class="input-group-text"><i class=""></i></span>
+                                                                    <span class="input-group-text"><i class=""></i></span>
                                                                 </div>
                                                                   <input type="text" class="form-control" placeholder="College"  name="college"required>
                                                               </div>
@@ -87,14 +87,13 @@
                                                       </div>
                                                     </div>
                                                     <h3 class="modal-title" id="exampleModalLabel">Nature of Request</h3>
-                                                    <div class="row>
+                                                    <div class="row">
                                                         <div class="col-md-8"> 
                                                           <input type="radio" name="service" value="repair" checked> Repair
                                                           <input type="radio" name="service" value="cleaning" checked> Cleaning
                                                           <input type="radio" name="service" value="wiring" checked> Wiring
                                                           <br>
                                                           <label for="others">Others</label>
-                                                        
                                                         </div>
                                                       </div>
                                                     <br>
@@ -104,9 +103,9 @@
                                                     <button type="submit" class="btn btn-primary">Send Request</button>
                                                     
                                                   </div>
-                                                </form>
+                                      </form>
                                             </div>
-                                           
+                                  </form>
                                             
                                         </div>
                                     </div>
@@ -115,7 +114,7 @@
                         </div>
                       </div>
                 </div>
-            </div>               
+                          
         @endif
         @include('layouts.footers.auth')
     </div>

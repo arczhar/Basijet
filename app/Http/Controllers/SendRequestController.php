@@ -6,7 +6,7 @@ use App\Http\Requests\ClientSendRequest;
 use Illuminate\Http\ClientSend;
 
 
-
+use Illuminate\Http\Request as HttpRequest;
 
 class SendRequestController extends Controller
 {
@@ -37,23 +37,23 @@ class SendRequestController extends Controller
      * @param \App\Request
      * @return \Illuminate\Http\Response
      */
-    public function store(ClientSendRequest $request, Request $model)
+    public function store(HttpRequest $request)
     {
         $this->validate($request,[
             'date'=>'required',
             'rmno'=>'required',
             'college'=>'required',
             'equipment'=>'required',
-            'propertynumber'=>'required',
+            'propertynumber'=>'required|unique:requests,propertynumber',
             'quantity'=>'required',
             'service'=>'required',        
         ]);
-        $reqs = new Request;
+        $reqs = new Request();
 
         $reqs->date = $request->input('date');
         $reqs->rmno = $request->input('rmno');
         $reqs->college = $request->input('college');
-        $reqs->equipmet = $request->input('equipment');
+        $reqs->equipment = $request->input('equipment');
         $reqs->propertynumber = $request->input('propertynumber');
         $reqs->quantity = $request->input('quantity');
         $reqs->service = $request->input('service');
@@ -61,7 +61,7 @@ class SendRequestController extends Controller
         $reqs->save();
         
 
-        return redirect()->route('users.sendrequest')->withstatus(__('Request successfully Sent.'));
+        return redirect()->route('Request')->withstatus(__('Request successfully Sent.'));
     }
 
     /**

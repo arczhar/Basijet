@@ -39,7 +39,7 @@ class ClientSendRequest extends FormRequest
             'equipment' =>  ['required'
             ],
             'propertynumber' => [
-                'required', 'propertynumber', Rule::unique((new Request)->getTable())->ignore($this->route()->requests->id ?? null)
+                'required', 'propertynumber', Rule::unique((new User)->getTable())->ignore($this->route()->request->id ?? null)
             ],
             'quantity' => ['required'
             ],
