@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace WmsuSRSS\Http\Controllers;
 
-use App\Http\Requests\ProfileRequest;
-use App\Http\Requests\PasswordRequest;
+use WmsuSRSS\Http\Requests\ProfileRequest;
+use WmsuSRSS\Http\Requests\PasswordRequest;
 use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
@@ -21,7 +21,7 @@ class ProfileController extends Controller
     /**
      * Update the profile
      *
-     * @param  \App\Http\Requests\ProfileRequest  $request
+     * @param  \WmsuSRSS\Http\Requests\ProfileRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(ProfileRequest $request)
@@ -34,7 +34,7 @@ class ProfileController extends Controller
     /**
      * Change the password
      *
-     * @param  \App\Http\Requests\PasswordRequest  $request
+     * @param  \WmsuSRSS\Http\Requests\PasswordRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function password(PasswordRequest $request)
