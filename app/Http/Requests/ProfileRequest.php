@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace WmsuSRSS\Http\Requests;
 
-use App\User;
+use WmsuSRSS\User;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 

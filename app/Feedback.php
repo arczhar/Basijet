@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace WmsuSRSS;
 
 use Illuminate\Database\Eloquent\Model;
 

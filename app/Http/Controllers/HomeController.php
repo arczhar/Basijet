@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace WmsuSRSS\Http\Controllers;
 
 class HomeController extends Controller
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Request;
-use App\Http\Requests\ClientSendRequest;
+namespace WmsuSRSS\Http\Controllers;
+use WmsuSRSS\Request;
+use WmsuSRSS\Http\Requests\ClientSendRequest;
 use Illuminate\Http\ClientSend;
 
 
@@ -33,8 +33,8 @@ class SendRequestController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\ClientSend $request
-     * @param \App\Request
+     * @param  \WmsuSRSS\Http\Requests\ClientSend $request
+     * @param \WmsuSRSS\Request
      * @return \Illuminate\Http\Response
      */
     public function store(HttpRequest $request)

@@ -29,10 +29,10 @@
     25 => 'Laravel\\Tinker\\TinkerServiceProvider',
     26 => 'Carbon\\Laravel\\ServiceProvider',
     27 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    28 => 'App\\Providers\\AppServiceProvider',
-    29 => 'App\\Providers\\AuthServiceProvider',
-    30 => 'App\\Providers\\EventServiceProvider',
-    31 => 'App\\Providers\\RouteServiceProvider',
+    28 => 'WmsuSRSS\\Providers\\AppServiceProvider',
+    29 => 'WmsuSRSS\\Providers\\AuthServiceProvider',
+    30 => 'WmsuSRSS\\Providers\\EventServiceProvider',
+    31 => 'WmsuSRSS\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -50,10 +50,10 @@
     11 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     12 => 'LaravelFrontendPresets\\ArgonPreset\\ArgonPresetServiceProvider',
     13 => 'Carbon\\Laravel\\ServiceProvider',
-    14 => 'App\\Providers\\AppServiceProvider',
-    15 => 'App\\Providers\\AuthServiceProvider',
-    16 => 'App\\Providers\\EventServiceProvider',
-    17 => 'App\\Providers\\RouteServiceProvider',
+    14 => 'WmsuSRSS\\Providers\\AppServiceProvider',
+    15 => 'WmsuSRSS\\Providers\\AuthServiceProvider',
+    16 => 'WmsuSRSS\\Providers\\EventServiceProvider',
+    17 => 'WmsuSRSS\\Providers\\RouteServiceProvider',
   ),
   'deferred' => 
   array (
