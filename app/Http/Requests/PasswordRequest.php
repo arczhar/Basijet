@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace WmsuSRSS\Http\Requests;
 
-use App\Rules\CurrentPasswordCheckRule;
+use WmsuSRSS\Rules\CurrentPasswordCheckRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PasswordRequest extends FormRequest

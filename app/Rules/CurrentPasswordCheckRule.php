@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Rules;
+namespace WmsuSRSS\Rules;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Validation\Rule;
