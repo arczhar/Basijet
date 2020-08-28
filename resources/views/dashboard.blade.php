@@ -1,7 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
-    @include('layouts.headers.cards')
+@include('layouts.headers.cards')
     
     <div class="container-fluid mt--7">
     @if(Auth::user()->type== 'Admin')
@@ -200,8 +199,7 @@
                         </div>
                       </div>
                 </div>
-            </div>
-            
+            </div>            
         @elseif(Auth::user()->type == 'Secretary')
             <div class="row">
                 <div class="col-12">

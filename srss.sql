@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2020 at 01:16 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Generation Time: Aug 28, 2020 at 08:04 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,12 +25,48 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `approves`
+--
+
+CREATE TABLE `approves` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `completions`
+--
+
+CREATE TABLE `completions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -40,7 +76,24 @@ CREATE TABLE `migrations` (
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1);
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2020_03_04_005218_create_requests_table', 1),
+(4, '2020_03_04_005250_create_approves_table', 1),
+(5, '2020_03_04_005302_create_completions_table', 1),
+(6, '2020_03_04_005316_create_open_disputes_table', 1),
+(7, '2020_03_04_005328_create_feedback_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `open_disputes`
+--
+
+CREATE TABLE `open_disputes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -49,32 +102,49 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `technician`
+-- Table structure for table `requests`
 --
 
-CREATE TABLE `technician` (
-  `id` int(11) NOT NULL,
-  `firstname` varchar(100) NOT NULL,
-  `lastname` varchar(100) NOT NULL,
-  `contact` varchar(11) NOT NULL,
+CREATE TABLE `requests` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `date` date NOT NULL,
+  `rmno` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `college` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `equipment` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `propertynumber` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `service` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Pending',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `technician`
+-- Dumping data for table `requests`
 --
 
-INSERT INTO `technician` (`id`, `firstname`, `lastname`, `contact`, `created_at`, `updated_at`) VALUES
-(1, 'Joseph', 'Ragadio', '09171477875', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `requests` (`id`, `date`, `rmno`, `college`, `equipment`, `propertynumber`, `quantity`, `service`, `status`, `created_at`, `updated_at`) VALUES
+(1, '2020-03-14', '214', 'CTE', 'Aircon-Samsung', '4355', 1, 'repair', 'Pending', '2020-03-14 06:50:37', '2020-03-14 06:50:37'),
+(2, '2020-08-13', '23232', 'CET', 'eeeeeeeeee', '432434', 7, 'repair', 'Pending', '2020-08-03 16:34:17', '2020-08-03 16:34:17'),
+(3, '2020-08-06', '55555', 'CLA', 'Aircon-Samsung', '23213213', 2, 'repair', 'Pending', '2020-08-03 16:59:09', '2020-08-03 16:59:09'),
+(4, '2020-08-06', 'RM 13', 'CAIS', 'Aircon-Samsung', 'E-15-2012', 2, 'cleaning', 'Pending', '2020-08-03 22:22:07', '2020-08-03 22:22:07'),
+(5, '2020-08-07', '343333', 'CTE', 'Aircon-Samsungdfds', '43555', 6, 'repair', 'Pending', '2020-08-03 22:23:07', '2020-08-03 22:23:07'),
+(6, '2020-08-07', '23', 'CET', 'gbfvdgbfdg', '43243433', 3, 'repair', 'Pending', '2020-08-03 22:24:06', '2020-08-03 22:24:06'),
+(7, '2020-08-14', '232', 'fdsdfdf', 'dsadsadasd', 'dsasdasdas', 2, 'repair', 'Pending', '2020-08-03 22:24:36', '2020-08-03 22:24:36'),
+(8, '2020-08-07', '23232323', 'sdsadasdasdasdasd', 'dasdasdasdsadsadsadsadasdasdasdasdasdasd', 'sadsad', 1, 'wiring', 'Pending', '2020-08-03 22:24:58', '2020-08-03 22:24:58'),
+(9, '2020-08-27', '432432', 'fdsfsdf', 'dfsdfsdf', 'dsfdsfsdf', 2, 'cleaning', 'Pending', '2020-08-03 22:25:37', '2020-08-03 22:25:37'),
+(10, '2020-08-20', '23234', 'sdasdas', 'Aircon-Samsungdfdsdsadasd', '432434sadasdsa', 4, 'cleaning', 'Pending', '2020-08-03 22:26:01', '2020-08-03 22:26:01'),
+(11, '2020-08-12', '234324', 'dsffdsfdsf', 'hgjhgjhgj', 'fgdfg drgd gv', 4, 'cleaning', 'Pending', '2020-08-03 22:26:41', '2020-08-03 22:26:41'),
+(12, '2020-08-08', '324', 'ffgf', 'fgdgdfg', '434gfg', 4, 'repair', 'Pending', '2020-08-03 22:27:02', '2020-08-03 22:27:02'),
+(13, '2020-08-13', '343', 'gddfdf', 'fdhfgjhgf', 'jgfhjhgjhgj', 1, 'wiring', 'Pending', '2020-08-04 20:25:54', '2020-08-04 20:25:54');
 
 -- --------------------------------------------------------
 
@@ -84,12 +154,12 @@ INSERT INTO `technician` (`id`, `firstname`, `lastname`, `contact`, `created_at`
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `firstname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lastname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `usertype` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `firstname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Client',
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -99,24 +169,46 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `usertype`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(6, 'Admin', 'admin', 'Admin', 'admin@argon.com', '2020-02-15 10:15:47', '$2y$10$u7EWtSPpNmUGKnbnneZp4OVPlC8HqwtM7ThMfdgpip8OBMpByj.nS', '4ew2wrFChmTDcMXoPgRw5eClFJSM4OiISfydotqJ89KaWRCd6TbQHEWli61T', '2020-02-15 10:15:47', '2020-02-15 10:15:47'),
-(7, 'Eunil', 'prog', 'Client', 'jheehann2598@gmail.com', NULL, '$2y$10$heHGoqeVB40EfvNxI/Za3eKkGTFweRE3qsxBCq1fBRuNEVscR4oMS', NULL, '2020-02-15 10:45:06', '2020-02-15 10:45:06'),
-(8, 'bubuyug', 'ragadio', 'Technician', 'asap@gmail.com', NULL, '$2y$10$c6vDo0lmrmaUmkYfCiogPeWLZdCXVB506kbHeIXVR1yV34CBjG0nK', NULL, '2020-02-15 10:57:26', '2020-02-15 10:57:26'),
-(9, 'stata', '123qweq', 'Secretary', 'asap@yahoo.com', NULL, '$2y$10$OcFa1ytQgO0Flv07ZUzcweKNWv1BRT7k9XSifcQd0yEIEMw7FfXhO', NULL, '2020-02-15 11:00:45', '2020-02-15 11:00:45'),
-(11, 'EUNIL', 'DUTERTE', 'Client', 'neilduterte@yahoo.com', NULL, '$2y$10$/m882zbVPX.tmGW1YADTzeRbPz8GyxItFg6OVXyz4pK5Zjqm3dVou', NULL, '2020-02-15 18:13:48', '2020-02-15 18:13:48'),
-(12, 'Jasmine Alyssa', 'Ragadio', 'Client', 'jasmine_alyssa96@yahoo.com', NULL, '$2y$10$ARWfNb7Hb92cRgJoyvlPCOn66ZnuF220RakragbK1k7tStrnVR2DO', NULL, '2020-02-16 15:09:13', '2020-02-16 15:09:13'),
-(16, 'Joseph', 'Ragadio', 'Client', 'bubuy.jpeg@gmail.com', NULL, '$2y$10$D5g9vDM3Vft.Iv44DIu.4.0zHVdI0k27rEU4xH3DFN6qK/uMwf3mW', NULL, '2020-02-19 08:10:19', '2020-02-19 08:10:19'),
-(17, 'bubuy', 'gwapo', 'Client', 'bubuy.jpeg@yahoo.com', NULL, '$2y$10$dXNw5JTxgIS795e8mik28OEXgdv7hMM6kMtR7AWEUPjE5Z4Bwhcd2', NULL, '2020-02-19 08:12:17', '2020-02-19 08:12:17');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `type`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', 'admin', 'admin@argon.com', 'Admin', '2020-03-14 06:52:21', '$2y$10$t/XUF0UQKTGChqSzFmrSUuVYUYfwBqeLFahuzzyKDUAjzrxOye1je', NULL, '2020-03-14 06:52:22', '2020-03-14 06:52:22'),
+(2, 'Bubuy', 'Ragadio', 'bubuy@gmail.com', 'Client', '2020-03-14 06:52:22', '$2y$10$VUacvIBm41zu8c0wTCUkXuJuv.6ENBDYOUj8tArxuY.Ht8A5SRdEa', NULL, '2020-03-14 06:52:22', '2020-03-14 06:52:22'),
+(4, 'Arczhar', 'Mummuh', 'arczhar@gmai.com', 'Client', NULL, '$2y$10$qwnnqPcjvojSH6gmwRdQIOyYV9EA0bhWybuCtIAv4E5n/4mxxKLkm', NULL, '2020-08-03 04:54:49', '2020-08-03 04:54:49'),
+(5, 'Jhet', 'Arczhar', 'jhet@gmali.com', 'Client', NULL, '$2y$10$h4brEBt8KT8MldyL/j8GCOUMiMP.CWULoUWGAXb9.ouifJ.SZ7JyK', NULL, '2020-08-03 22:28:37', '2020-08-03 22:28:37'),
+(6, 'WInd', 'Ranger', 'wind@gmail.com', 'Secretary', NULL, '$2y$10$l7xJ.9WHhMd4U1Iu/1KGmeel/SDSACj8mAYI.2lTdzLlKCa4Pujqi', NULL, '2020-08-03 22:29:16', '2020-08-03 22:29:16'),
+(7, 'Mirana', 'Moon', 'mirana@gmail.com', 'Technician', NULL, '$2y$10$6ORsxn0WkOULDD/Mybjxa.12h3kvKf8oFCV7qu13GZi/uMGGL9w32', NULL, '2020-08-03 22:29:46', '2020-08-03 22:29:46');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `approves`
+--
+ALTER TABLE `approves`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `completions`
+--
+ALTER TABLE `completions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `open_disputes`
+--
+ALTER TABLE `open_disputes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -126,9 +218,9 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `technician`
+-- Indexes for table `requests`
 --
-ALTER TABLE `technician`
+ALTER TABLE `requests`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -143,22 +235,46 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `approves`
+--
+ALTER TABLE `approves`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `completions`
+--
+ALTER TABLE `completions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `technician`
+-- AUTO_INCREMENT for table `open_disputes`
 --
-ALTER TABLE `technician`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `open_disputes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `requests`
+--
+ALTER TABLE `requests`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

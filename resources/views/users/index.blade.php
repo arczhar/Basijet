@@ -1,8 +1,6 @@
 @extends('layouts.app', ['title' => __('User Management')])
-
 @section('content')
-    @include('layouts.headers.cards')
-
+@include('layouts.headers.cards')
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col">
@@ -28,7 +26,6 @@
                             </div>
                         @endif
                     </div>
-
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
@@ -85,8 +82,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-            
+        </div>        
         @include('layouts.footers.auth')
     </div>
 @endsection
