@@ -1,8 +1,6 @@
 @extends('layouts.app', ['title' => __('User Management')])
-
 @section('content')
     @include('users.partials.header', ['title' => __('Add User')])   
-
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col-xl-12 order-xl-1">
@@ -19,8 +17,7 @@
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('user.store') }}" autocomplete="off">
-                            @csrf
-                            
+                            @csrf                           
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('firstname') ? ' has-danger' : '' }}">
@@ -53,7 +50,6 @@
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-email">{{ __('Email') }}</label>
                                     <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="{{ old('email') }}" required>
-
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>

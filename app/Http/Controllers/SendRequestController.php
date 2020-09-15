@@ -17,7 +17,8 @@ class SendRequestController extends Controller
      */
     public function index(Request $model)
     {
-        return view('users.sendrequest', ['requests' => $model->paginate(5)]);
+        $request = request::all();  
+        return view('users.sendrequest')->with('request',$request);
     }
 
     /**

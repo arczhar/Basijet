@@ -1,8 +1,6 @@
 @extends('layouts.app', ['title' => __('User Management')])
-
 @section('content')
     @include('users.partials.header', ['title' => __('Edit User')])   
-
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col-xl-12 order-xl-1">
@@ -61,9 +59,7 @@
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                                     @endif
-                                </div>
-                               
-
+                                </div>                               
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>
@@ -72,8 +68,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div> 
         @include('layouts.footers.auth')
     </div>
 @endsection

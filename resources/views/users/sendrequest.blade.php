@@ -3,6 +3,7 @@
 @include('layouts.headers.cards')    
 <div class="container-fluid mt--7">      
   @if(Auth::user()->type== 'Client')
+
     <div class="row">
       <div class="col-12">        
         <div class="card">
@@ -152,6 +153,7 @@
       </div>{{--End Client col-12--}}
     </div>{{--End Client ROW--}}   
     {{--------END     CLIENT    SIDE-------}} 
+
     {{--Admin Side--}}  
   @elseif(Auth::user()->type== 'Admin')
     <div class="row">
@@ -392,3 +394,5 @@
     </script>
 @endpush 
 @endsection
+=======
+  

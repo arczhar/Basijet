@@ -93,7 +93,6 @@
                         <span class="nav-link-text" style="color: #f4645f;">{{ __('Users') }}</span>
                         
                     </a>
-
                     <div class="collapse " id="navbar-examples">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
@@ -105,9 +104,7 @@
                                 <a class="nav-link" href="{{ route('user.index') }}">
                                     {{ __('Manage Accounts') }}
                                 </a>
-                            </li>
-                           
-                            
+                            </li>                          
                         </ul>
                     </div>
                     @endif
