@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
-@include('layouts.headers.cards')   
-<div class="container-fluid mt--7">
-  {{--Client Side--}}
-  @if(Auth::user()->type=='Client')
+@include('layouts.headers.cards')    
+<div class="container-fluid mt--7">      
+  @if(Auth::user()->type== 'Client')
+
     <div class="row">
       <div class="col-12">        
         <div class="card">
@@ -131,17 +131,17 @@
                               </tr>
                             </thead>
                             <tbody class="list">
-                              @foreach ($request as $row)
+                              @foreach ($requests as $row)
                                 <tr>
-                                  <td>{{ $row->date}}</td>
-                                  <td>{{ $row->rmno}}</td>                
+                                  <td>{{ $row->date }}</td>
+                                  <td>{{ $row->rmno}}</td>
                                   <td>{{ $row->college}}</td>
                                   <td>{{ $row->equipment}}</td>
                                   <td>{{ $row->propertynumber}}</td>
                                   <td>{{ $row->quantity}}</td>
                                   <td>{{ $row->service}}</td>
                                   <td>{{ $row->status}}</td>
-                                </tr>
+                                <tr>
                               @endforeach
                             </tbody>
                           </table>                        
@@ -153,9 +153,10 @@
       </div>{{--End Client col-12--}}
     </div>{{--End Client ROW--}}   
     {{--------END     CLIENT    SIDE-------}} 
-    {{--Admin Side--}}          
-  @else(Auth::user()->type=='Admin') 
-  <div class="row">
+
+    {{--Admin Side--}}  
+  @elseif(Auth::user()->type== 'Admin')
+    <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-header border-0">
@@ -320,46 +321,51 @@
               </div>{{-- End Modal Content --}}
             </div>{{-- End Modal Dialog --}}
           </div>{{-- End Modal Fade --}}
-              <div class="table-responsive">
-                  <table id="datable" class="table align-items-center table-flush">
-                      <thead class="thead-light">
-                        <tr>
-                          <th scope="col" class="sort" data-sort="name">Date</th>
-                          <th scope="col" class="sort" data-sort="property">RM NO</th>
-                          <th scope="col" class="sort" data-sort="college">College</th>
-                          <th scope="col" class="sort" data-sort="equipment">Equipment/Unit/Model</th>
-                          <th scope="col" class="sort" data-sort="property">Property No.</th>
-                          <th scope="col" class="sort" data-sort="quantity">Quantity</th>
-                          <th scope="col" class="sort" data-sort="request">Nature of Request</th>
-                          <th scope="col" class="sort" data-sort="request">Status</th>
-                          <th scope="col" class="sort" data-sort="request">Options</th>
-                        </tr> 
-                      </thead>
-                      <tbody class="list">
-                        @foreach ($request as $row)
-                          <tr>
-                            <td>{{ $row->date}}</td>
-                            <td>{{ $row->rmno}}</td>                
-                            <td>{{ $row->college}}</td>
-                            <td>{{ $row->equipment}}</td>
-                            <td>{{ $row->propertynumber}}</td>
-                            <td>{{ $row->quantity}}</td>
-                            <td>{{ $row->service}}</td>
-                            <td>{{ $row->status}}</td>
-                            <td>
-                              <button  type="button" class="btn btn-primary btn-sm"data-toggle="modal" data-target="#editModal" data-date="{{$row->date}}" data-rmno="{{$row->rmno}}" data-college="{{$row->college}}" data-equipment="{{$row->equipment}}" data-propertynumber="{{$row->propertynumber}}" data-quantity="{{$row->quantity}}" data-service="{{$row->service}}"  >APPROVE</button>                                            
-                            </td>                  
-                          </tr>  
-                        @endforeach           
-                      </tbody>
-                  </table>
-              </div> {{-- End Admin Table --}}
+            <div class="table-responsive">
+              <table id="datable" class="table align-items-center table-flush">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col" class="sort" data-sort="name">Date</th>
+                      <th scope="col" class="sort" data-sort="property">RM NO</th>
+                      <th scope="col" class="sort" data-sort="college">College</th>
+                      <th scope="col" class="sort" data-sort="equipment">Equipment/Unit/Model</th>
+                      <th scope="col" class="sort" data-sort="property">Property No.</th>
+                      <th scope="col" class="sort" data-sort="quantity">Quantity</th>
+                      <th scope="col" class="sort" data-sort="request">Nature of Request</th>
+                      <th scope="col" class="sort" data-sort="request">Status</th>
+                      <th scope="col" class="sort" data-sort="request">Options</th>
+                    </tr> 
+                  </thead>
+                  <tbody class="list">
+                    @foreach ($requests as $request)
+                      <tr>
+                        <td>{{ $request->date }}</td>
+                        <td>{{ $request->rmno}}</td>
+                        <td>{{ $request->college}}</td>
+                        <td>{{ $request->equipment}}</td>
+                        <td>{{ $request->propertynumber}}</td>
+                        <td>{{ $request->quantity}}</td>
+                        <td>{{ $request->service}}</td>
+                        <td>{{ $request->status}}</td>
+                        <td>
+                          <button  type="button" class="btn btn-primary btn-sm"data-toggle="modal" data-target="#editModal" data-date="{{$request->date}}" data-rmno="{{$request->rmno}}" data-college="{{$request->college}}" data-equipment="{{$request->equipment}}" data-propertynumber="{{$request->propertynumber}}" data-quantity="{{$request->quantity}}" data-service="{{$request->service}}">APPROVE</button>                                            
+                        </td>
+                      </tr>
+                    @endforeach 
+                  </tbody>
+              </table>
+                <div class="card-footer py-4">
+                  <nav class = "d-flex justify-content-end" aria-label="...">
+                    {{$requests->links()}}
+                </div>
+            </div> {{-- End Admin Table --}}
       </div>{{--End Admin Card --}}  
     </div>{{-- End Admin Col --}}
   </div> {{-- End Admin Row --}} 
   @endif
   @include('layouts.footers.auth')        
 </div>{{--Container fluid--}}
+@push('js')
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
     <script type="text/javascript">
@@ -386,5 +392,7 @@
             modal.find('.modal-body #service').val(service); 
           })    
     </script>
-  
+@endpush 
 @endsection
+=======
+  
